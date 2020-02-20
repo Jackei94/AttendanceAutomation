@@ -1,0 +1,28 @@
+
+AnchorPane
+{
+    -fx-background-color: lightblue;
+}
+
+#leftBox
+{
+    -fx-background-color: #000033;
+}
+
+Button
+{
+    -fx-background-color: whitesmoke;
+    -fx-text-fill: black;
+}
+
+#tableColumn
+{
+    -fx-background-color: whitesmoke;
+    -fx-text-fill: black; 
+}
+
+ChoiceBox
+{
+    -fx-background-color: whitesmoke;
+    -fx-text-fill: black;
+}
