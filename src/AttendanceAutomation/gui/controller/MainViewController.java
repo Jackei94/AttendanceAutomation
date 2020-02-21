@@ -16,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -29,10 +31,14 @@ public class MainViewController implements Initializable
     private Label successOrFailed;
     @FXML
     private Label studentName;
+    @FXML
+    private ImageView logoImage;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        logoImage.setImage(handleImage());
     }    
 
     @FXML
@@ -57,4 +63,10 @@ public class MainViewController implements Initializable
         
     }
     
+    
+    private Image handleImage()
+    {
+       Image logo = new Image("/AttendanceAutomation/images/easvlogo.jpg");
+       return logo;
+    }
 }

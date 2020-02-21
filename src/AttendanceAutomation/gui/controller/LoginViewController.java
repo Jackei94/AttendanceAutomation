@@ -14,6 +14,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -24,13 +26,16 @@ import javafx.stage.Stage;
 public class LoginViewController implements Initializable
 {
 
+    @FXML
+    private ImageView logoImage;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        logoImage.setImage(handleImage());
     }    
 
     @FXML
@@ -41,6 +46,12 @@ public class LoginViewController implements Initializable
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+    }
+    
+    private Image handleImage()
+    {
+       Image logo = new Image("/AttendanceAutomation/images/easvlogo.jpg");
+       return logo;
     }
     
 }

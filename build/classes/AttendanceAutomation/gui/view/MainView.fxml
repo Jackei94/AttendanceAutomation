@@ -13,30 +13,41 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AttendanceAutomation.gui.controller.MainViewController">
    <children>
-      <Label layoutX="10.0" layoutY="10.0" text="Welcome to EASV">
+      <Label layoutX="10.0" layoutY="10.0" text="Welcome">
          <font>
-            <Font name="System Bold" size="56.0" />
+            <Font name="System Bold" size="106.0" />
          </font>
       </Label>
-      <Label fx:id="successOrFailed" layoutX="10.0" layoutY="500.0" text="Success/Failed">
+      <Label fx:id="successOrFailed" layoutX="14.0" layoutY="486.0" text="Success/Failed">
          <font>
-            <Font size="50.0" />
+            <Font size="70.0" />
          </font>
       </Label>
-      <Label fx:id="studentName" layoutX="10.0" layoutY="150.0" text="Full Student Name">
+      <Label fx:id="studentName" layoutX="10.0" layoutY="166.0" text="Full Student Name">
          <font>
-            <Font size="30.0" />
+            <Font size="40.0" />
          </font>
       </Label>
-      <VBox id="leftBox" layoutX="492.0" prefHeight="600.0" prefWidth="308.0">
+      <VBox id="leftBox" layoutX="500.0" prefHeight="600.0" prefWidth="300.0">
          <children>
-            <ImageView fitHeight="338.0" fitWidth="308.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logoImage" fitHeight="144.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../images/EASV.png" />
-               </image>
-            </ImageView>
-            <Pane prefHeight="233.0" prefWidth="308.0" />
-            <HBox prefHeight="67.0" prefWidth="308.0">
+                  <Image url="@../../images/easvlogo.jpg" />
+               </image></ImageView>
+            <Pane prefHeight="379.0" prefWidth="300.0">
+               <children>
+                  <Label id="sliderText" layoutX="9.0" layoutY="74.0" text="Slide your">
+                     <font>
+                        <Font size="60.0" />
+                     </font>
+                  </Label>
+                  <Label id="sliderText" layoutX="9.0" layoutY="162.0" text="Student ID">
+                     <font>
+                        <Font size="60.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <HBox prefHeight="67.0" prefWidth="300.0">
                <children>
                   <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#studentLoginButton" prefHeight="94.0" prefWidth="90.0" text="Student Login">
                      <HBox.margin>
@@ -48,7 +59,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#checkInButton" prefHeight="58.0" prefWidth="90.0" text="Check In">
+                  <Button mnemonicParsing="false" onAction="#checkInButton" prefHeight="67.0" prefWidth="85.0" text="Check In">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>

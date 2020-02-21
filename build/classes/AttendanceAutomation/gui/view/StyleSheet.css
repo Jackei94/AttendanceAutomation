@@ -9,6 +9,11 @@ AnchorPane
     -fx-background-color: #000033;
 }
 
+#sliderText
+{
+    -fx-text-fill: whitesmoke;
+}
+
 Button
 {
     -fx-background-color: whitesmoke;
