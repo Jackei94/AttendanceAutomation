@@ -5,11 +5,20 @@
  */
 package AttendanceAutomation.bll;
 
+import AttendanceAutomation.be.Student;
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author Jacob
  */
 public class StudentManager
 {
-    
+    private ObservableList allStudents;
+   
+   public ObservableList<Student> getAllStudents()
+    {
+        return allStudents;
+    }
 }
+

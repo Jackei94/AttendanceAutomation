@@ -6,16 +6,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@StyleSheet.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="AttendanceAutomation.gui.controller.ListViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@StyleSheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AttendanceAutomation.gui.controller.ListViewController">
    <children>
       <ChoiceBox layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
       <ChoiceBox layoutX="14.0" layoutY="59.0" prefWidth="150.0" />
       <ChoiceBox layoutX="14.0" layoutY="110.0" prefWidth="150.0" />
-      <TableView layoutX="183.0" layoutY="14.0" prefHeight="374.0" prefWidth="403.0">
+      <TableView fx:id="studentView" editable="true" layoutX="183.0" layoutY="17.0" prefHeight="354.0" prefWidth="403.0">
         <columns>
-          <TableColumn id="tableColumn" prefWidth="75.0" text="Full Student Name" />
-          <TableColumn id="tableColumn" prefWidth="75.0" text="Attendance" />
+          <TableColumn id="tableColumn" fx:id="studentName" prefWidth="75.0" text="Full Student Name" />
+          <TableColumn id="tableColumn" fx:id="studentAtt" prefWidth="75.0" text="Attendance" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
