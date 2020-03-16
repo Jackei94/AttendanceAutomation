@@ -52,9 +52,13 @@ public class MainViewController implements Initializable
     }
 
     @FXML
-    private void adminLoginButton(ActionEvent event)
+    private void adminLoginButton(ActionEvent event) throws IOException
     {
-        
+        Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/LoginView.fxml"));
+        Scene scene = new Scene(loader);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

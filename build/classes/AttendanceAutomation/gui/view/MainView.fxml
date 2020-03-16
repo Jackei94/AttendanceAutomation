@@ -28,7 +28,7 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <VBox id="leftBox" layoutX="500.0" prefHeight="600.0" prefWidth="300.0">
+      <VBox id="rightBox" layoutX="500.0" prefHeight="600.0" prefWidth="300.0">
          <children>
             <ImageView fx:id="logoImage" fitHeight="144.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
