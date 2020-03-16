@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -34,17 +35,17 @@
             </Pane>
          </children>
       </VBox>
-      <TextField layoutX="319.0" layoutY="178.0" prefHeight="44.0" prefWidth="262.0" promptText="...">
+      <TextField fx:id="usernameField" layoutX="320.0" layoutY="178.0" prefHeight="44.0" prefWidth="260.0" promptText="...">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <TextField layoutX="319.0" layoutY="252.0" prefHeight="44.0" prefWidth="262.0" promptText="...">
+      <PasswordField fx:id="passwordField" layoutX="320.0" layoutY="253.0" prefHeight="44.0" prefWidth="260.0" promptText="...">
          <font>
             <Font size="20.0" />
          </font>
-      </TextField>
-      <Label layoutX="338.0" layoutY="14.0" text="Stu/Tea">
+      </PasswordField>
+      <Label fx:id="studentOrTeacherLogin" layoutX="338.0" layoutY="14.0" text="Stu/Tea">
          <font>
             <Font name="System Bold" size="60.0" />
          </font>
@@ -54,7 +55,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="493.0" layoutY="328.0" mnemonicParsing="false" text="Cancel">
+      <Button fx:id="loginCancelButton" layoutX="492.0" layoutY="328.0" mnemonicParsing="false" onAction="#cancelButton" text="Cancel">
          <font>
             <Font size="20.0" />
          </font>

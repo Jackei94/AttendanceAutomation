@@ -6,9 +6,12 @@ package AttendanceAutomation.gui.controller;
  * and open the template in the editor.
  */
 
+import AttendanceAutomation.gui.model.StudentOrTeacher;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +29,8 @@ import javafx.stage.Stage;
  */
 public class MainViewController implements Initializable
 {
+    
+    private StudentOrTeacher studentOrTeacher;
 
     @FXML
     private Label successOrFailed;
@@ -38,23 +43,41 @@ public class MainViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        try
+        {
+            studentOrTeacher = StudentOrTeacher.getInstance();
+        } catch (Exception ex)
+        {
+            Logger.getLogger(MainViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         logoImage.setImage(handleImage());
     }    
 
     @FXML
     private void studentLoginButton(ActionEvent event) throws IOException
     {
+        this.studentOrTeacher = studentOrTeacher;
+        studentOrTeacher.setStudentOrTeacher("Student");
+        
+        handleLoginScene();
+    }
+
+    @FXML
+    private void teacherLoginButton(ActionEvent event) throws IOException
+    {
+        this.studentOrTeacher = studentOrTeacher;
+        studentOrTeacher.setStudentOrTeacher("Teacher");
+        
+        handleLoginScene();
+    }
+    
+    public void handleLoginScene() throws IOException
+    {
         Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/LoginView.fxml"));
         Scene scene = new Scene(loader);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML
-    private void adminLoginButton(ActionEvent event)
-    {
-        
     }
 
     @FXML
@@ -69,4 +92,5 @@ public class MainViewController implements Initializable
        Image logo = new Image("/AttendanceAutomation/images/easvlogo.jpg");
        return logo;
     }
+
 }
