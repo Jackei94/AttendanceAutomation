@@ -23,7 +23,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
+
 
 /**
  * FXML Controller class
@@ -46,9 +49,6 @@ public class LoginViewController implements Initializable
     @FXML
     private PasswordField passwordField;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -66,20 +66,31 @@ public class LoginViewController implements Initializable
         studentOrTeacherLogin.textProperty().bind(studentOrTeacher.studentOrTeacherProperty());
     }
 
+//    @FXML
+//    private void loginButton(ActionEvent event) throws IOException
+//    {
+//        Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/ListView.fxml"));
+//        Scene scene = new Scene(loader);
+//        Stage stage = new Stage();
+//        stage.setScene(scene);
+//        stage.show();
+//    }
+
     @FXML
-    private void loginButton(ActionEvent event) throws IOException
+    private void LoginButtonClicked(MouseEvent event) throws IOException
     {
-        if (usernameField == null || passwordField == null)
+        if(usernameField.getText().equals("Admin") && passwordField.getText().equals("Admin"))
         {
-            
-        }
-        else
-        {
+            JOptionPane.showMessageDialog(null,"Login Succesful");
             Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/ListView.fxml"));
             Scene scene = new Scene(loader);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Login Failure");
         }
     }
 
