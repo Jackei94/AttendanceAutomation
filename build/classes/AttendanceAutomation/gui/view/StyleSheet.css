@@ -4,7 +4,12 @@ AnchorPane
     -fx-background-color: lightblue;
 }
 
-#leftBox
+Label
+{
+    -fx-text-fill: black;
+}
+
+#rightBox
 {
     -fx-background-color: #000033;
 }
