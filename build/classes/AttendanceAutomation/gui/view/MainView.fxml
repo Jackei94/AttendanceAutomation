@@ -54,12 +54,12 @@
                         <Insets left="10.0" right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#adminLoginButton" prefHeight="98.0" prefWidth="84.0" text="Admin Login">
+                  <Button mnemonicParsing="false" onAction="#teacherLoginButton" prefHeight="98.0" prefWidth="90.0" text="Teacher Login">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#checkInButton" prefHeight="67.0" prefWidth="85.0" text="Check In">
+                  <Button mnemonicParsing="false" onAction="#checkInButton" prefHeight="67.0" prefWidth="80.0" text="Check In">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
