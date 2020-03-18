@@ -30,7 +30,7 @@ public class StudentDAO
     {
         try (BufferedReader br = new BufferedReader(new FileReader(new File(USER_SOURCE))))
         {
-            ArrayList<Student> allStudents = new ArrayList<>();
+            List<Student> allStudents = new ArrayList<>();
 
             while (true)
             {
@@ -73,8 +73,6 @@ public class StudentDAO
            throw new Exception("Could not acces User file");
            
         }
-        
-        
     }
 }
 

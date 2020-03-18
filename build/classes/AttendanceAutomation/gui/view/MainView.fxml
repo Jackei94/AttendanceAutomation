@@ -28,7 +28,7 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <VBox id="leftBox" layoutX="500.0" prefHeight="600.0" prefWidth="300.0">
+      <VBox id="rightBox" layoutX="500.0" prefHeight="600.0" prefWidth="300.0">
          <children>
             <ImageView fx:id="logoImage" fitHeight="144.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -54,12 +54,12 @@
                         <Insets left="10.0" right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#adminLoginButton" prefHeight="98.0" prefWidth="84.0" text="Admin Login">
+                  <Button mnemonicParsing="false" onAction="#teacherLoginButton" prefHeight="98.0" prefWidth="90.0" text="Teacher Login">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#checkInButton" prefHeight="67.0" prefWidth="85.0" text="Check In">
+                  <Button mnemonicParsing="false" onAction="#checkInButton" prefHeight="67.0" prefWidth="80.0" text="Check In">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
