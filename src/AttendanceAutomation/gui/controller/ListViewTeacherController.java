@@ -23,7 +23,7 @@ import javafx.scene.control.TableView;
  *
  * @author Jacob
  */
-public class ListViewController implements Initializable
+public class ListViewTeacherController implements Initializable
 {
    
 

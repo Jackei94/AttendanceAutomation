@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -38,6 +39,8 @@ public class MainViewController implements Initializable
     private Label studentName;
     @FXML
     private ImageView logoImage;
+    @FXML
+    private TextField idInputField;
     
     
     @Override
@@ -83,7 +86,15 @@ public class MainViewController implements Initializable
     @FXML
     private void checkInButton(ActionEvent event)
     {
-        
+        if(idInputField.getText() == "123")
+        {
+            studentName.setText("Student:\nJacob Geert Olsen");
+            successOrFailed.setText("Success");
+        }
+        else
+        {
+            successOrFailed.setText("Failed");
+        }
     }
     
     
