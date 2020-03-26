@@ -9,7 +9,7 @@ package AttendanceAutomation.dal;
  *
  * @author Tramm
  */
-public class DALException
+public class DalException
 {
    
 }
