@@ -16,7 +16,7 @@ public class Student
 
    public static String getName;
     private int id;
-    public static String name;
+    public String name;
     private double attendance;
 
    public int getId()
