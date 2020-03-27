@@ -14,10 +14,11 @@ import javafx.beans.property.StringProperty;
 public class Student
 {
 
-   public static String getName;
+   
     private int id;
     public static String name;
-    private double attendance;
+    public String login;
+    
 
    public int getId()
    {
@@ -38,22 +39,23 @@ public class Student
    {
       this.name = name;
    }
-
-   public double getAttendance()
+   
+   public void setLogin(String login)
    {
-      return attendance;
+      this.login = login;
    }
-
-   public void setAttendance(double attendance)
+   
+   public String getLogin()
    {
-      this.attendance = attendance;
-   }
-
+     return login;
+                   }
+   
    public Student(int id, String name, double attendance)
    {
       this.id = id;
       this.name = name;
-      this.attendance = attendance;
+      this.login = login;
+      
    }
     
     
