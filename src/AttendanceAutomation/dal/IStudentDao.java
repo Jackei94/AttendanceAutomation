@@ -5,11 +5,15 @@
  */
 package AttendanceAutomation.dal;
 
+import AttendanceAutomation.be.Student;
+import dal.DalException;
+import java.util.List;
+
 /**
  *
- * @author Tramm
+ * @author Jacob
  */
-public class DalException
+public interface IStudentDao
 {
-   
+    List<Student> setStudent() throws DalException;
 }

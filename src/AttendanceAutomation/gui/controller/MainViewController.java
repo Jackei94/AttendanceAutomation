@@ -5,11 +5,12 @@ package AttendanceAutomation.gui.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import AttendanceAutomation.be.Student;
+import AttendanceAutomation.gui.model.StudentModel;
 import AttendanceAutomation.gui.model.StudentOrTeacher;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -30,7 +31,8 @@ import javafx.stage.Stage;
  */
 public class MainViewController implements Initializable
 {
-
+    
+    private StudentModel studentModel;
     private StudentOrTeacher studentOrTeacher;
 
     @FXML
@@ -47,6 +49,7 @@ public class MainViewController implements Initializable
     {
         try
         {
+            studentModel = StudentModel.getInstance();
             studentOrTeacher = StudentOrTeacher.getInstance();
         } catch (Exception ex)
         {
@@ -85,17 +88,21 @@ public class MainViewController implements Initializable
     @FXML
     private void checkInButton(ActionEvent event)
     {
-        String input = idInputField.getText();
-        int id = Integer.parseInt(input);
-        if (id == 123)
-        {
-            studentName.setText("Student:\nJacob Geert Olsen");
-            successOrFailed.setText("Success");
-        } else
-        {
-            studentName.setText("Student:");
-            successOrFailed.setText("Failed");
-        }
+//        if (idInputField.equals(setStudent()));
+////        int id = Integer.parseInt(input);
+////        if (id == 123456)
+//        {
+//            try {
+//                studentName.setText(studentModel.setStudent().toString());
+//                successOrFailed.setText("Success");
+//            } catch (Exception ex) {
+//                Logger.getLogger(MainViewController.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        } else
+//        {
+//            studentName.setText("");
+//            successOrFailed.setText("Failed");
+//        }
     }
 
     private Image handleImage()

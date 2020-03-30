@@ -13,48 +13,47 @@ import javafx.beans.property.StringProperty;
  */
 public class Student
 {
-
-   public static String getName;
     private int id;
-    public String name;
+    private String name;
     private double attendance;
 
-   public int getId()
-   {
-      return id;
-   }
+    public Student(int id, String name, double attendance)
+    {
+        this.id = id;
+        this.name = name;
+        this.attendance = attendance;
+    }
+    
+    public Student()
+    {
+        
+    }
 
-   public void setId(int id)
-   {
-      this.id = id;
-   }
+    public int getId()
+    {
+        return id;
+    }
 
-   public String getName()
-   {
-      return name;
-   }
+    public String getName()
+    {
+        return name;
+    }
 
-   public void setName(String name)
-   {
-      this.name = name;
-   }
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 
-   public double getAttendance()
-   {
-      return attendance;
-   }
+    public double getAttendance()
+    {
+        return attendance;
+    }
 
-   public void setAttendance(double attendance)
-   {
-      this.attendance = attendance;
-   }
-
-   public Student(int id, String name, double attendance)
-   {
-      this.id = id;
-      this.name = name;
-      this.attendance = attendance;
-   }
+    public void setAttendance(double attendance)
+    {
+        this.attendance = attendance;
+    }
     
     
+
 }

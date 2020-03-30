@@ -3,13 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AttendanceAutomation.dal;
+package dal;
 
 /**
  *
- * @author Tramm
+ * @author Jacob, Christian, René & Charlie
  */
-public class DalException
+public class DalException extends Exception
 {
-   
+    /**
+     * Catch the Exceptions
+     * @param msg 
+     */
+    public DalException (String msg)
+    {
+    super( msg); 
+    }
 }
