@@ -53,7 +53,5 @@ public class Student
     {
         this.attendance = attendance;
     }
-    
-    
 
 }
