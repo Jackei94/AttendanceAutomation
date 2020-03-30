@@ -43,7 +43,7 @@ public class ListViewTeacherController implements Initializable
    @FXML
    private TableColumn<Student, Boolean> studentAtt;
     @FXML
-    private ChoiceBox<?> classChoice;
+    private ChoiceBox<String> classChoice;
     @FXML
     private ChoiceBox<String> studentChoice;
     @FXML
