@@ -6,7 +6,10 @@
 package AttendanceAutomation.bll;
 
 import AttendanceAutomation.be.Student;
-import javafx.collections.ObservableList;
+import AttendanceAutomation.dal.IStudentDao;
+import AttendanceAutomation.dal.StudentDBDAO;
+import dal.DalException;
+import java.util.List;
 
 /**
  *
@@ -14,11 +17,16 @@ import javafx.collections.ObservableList;
  */
 public class StudentManager
 {
-    private ObservableList allStudents;
-   
-   public ObservableList<Student> getAllStudents()
+    private IStudentDao studentDao;
+    
+    public StudentManager() throws Exception
     {
-        return allStudents;
+        studentDao = (IStudentDao) new StudentDBDAO();
+    }
+    
+    public List<Student> setStudent() throws DalException
+    {
+        return studentDao.setStudent();
     }
 }
 

@@ -59,8 +59,6 @@ public class StudentDAO
                        e.printStackTrace();
                         //Skip row
                     }
-                        
-                    
                 }
             } 
             
