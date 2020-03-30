@@ -16,9 +16,13 @@ public class Student
 
    
     private int id;
+
     public static String name;
     public String login;
     
+
+    private double attendance;
+
 
    public int getId()
    {

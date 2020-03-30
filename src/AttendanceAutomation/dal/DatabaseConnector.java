@@ -5,6 +5,15 @@
  */
 package AttendanceAutomation.dal;
 
+
+/**
+ *
+ * @author tramm
+ */
+
+
+    
+
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 import java.io.FileReader;
@@ -47,4 +56,5 @@ public class DatabaseConnector
     {
         return dataSource.getConnection();
     }
+
 }

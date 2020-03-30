@@ -5,11 +5,11 @@ package AttendanceAutomation.gui.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import AttendanceAutomation.gui.model.StudentOrTeacher;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -29,7 +30,7 @@ import javafx.stage.Stage;
  */
 public class MainViewController implements Initializable
 {
-    
+
     private StudentOrTeacher studentOrTeacher;
 
     @FXML
@@ -38,8 +39,9 @@ public class MainViewController implements Initializable
     private Label studentName;
     @FXML
     private ImageView logoImage;
-    
-    
+    @FXML
+    private TextField idInputField;
+
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -51,14 +53,14 @@ public class MainViewController implements Initializable
             Logger.getLogger(MainViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
         logoImage.setImage(handleImage());
-    }    
+    }
 
     @FXML
     private void studentLoginButton(ActionEvent event) throws IOException
     {
         this.studentOrTeacher = studentOrTeacher;
         studentOrTeacher.setStudentOrTeacher("Student");
-        
+
         handleLoginScene();
     }
 
@@ -67,10 +69,10 @@ public class MainViewController implements Initializable
     {
         this.studentOrTeacher = studentOrTeacher;
         studentOrTeacher.setStudentOrTeacher("Teacher");
-        
+
         handleLoginScene();
     }
-    
+
     public void handleLoginScene() throws IOException
     {
         Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/LoginView.fxml"));
@@ -83,14 +85,23 @@ public class MainViewController implements Initializable
     @FXML
     private void checkInButton(ActionEvent event)
     {
-        
+        String input = idInputField.getText();
+        int id = Integer.parseInt(input);
+        if (id == 123)
+        {
+            studentName.setText("Student:\nJacob Geert Olsen");
+            successOrFailed.setText("Success");
+        } else
+        {
+            studentName.setText("Student:");
+            successOrFailed.setText("Failed");
+        }
     }
-    
-    
+
     private Image handleImage()
     {
-       Image logo = new Image("/AttendanceAutomation/images/easvlogo.jpg");
-       return logo;
+        Image logo = new Image("/AttendanceAutomation/images/easvlogo.jpg");
+        return logo;
     }
 
 }
