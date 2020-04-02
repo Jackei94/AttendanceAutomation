@@ -8,8 +8,8 @@
     <update check="always"/>
     <resources>
         <j2se version="9.0.4+" href="http://java.sun.com/products/autodl/j2se"/>
-        <jar href="AttendanceAutomation.jar" size="32251" download="eager"/>
-        <jar href="lib\mssql-jdbc-6.3.6-SNAPSHOT.jre9-preview.jar" size="876102" download="eager"/>
+        <jar href="AttendanceAutomation.jar" size="32236" download="eager"/>
+        <jar href="lib\mssql-jdbc-6.4.0.jre9.jar" size="917459" download="eager"/>
     </resources>
     <jfx:javafx-desc width="800" height="600" main-class="AttendanceAutomation.App" name="App"/>
 </jnlp>
