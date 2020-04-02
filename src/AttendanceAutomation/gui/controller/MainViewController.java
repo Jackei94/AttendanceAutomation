@@ -89,8 +89,8 @@ public class MainViewController implements Initializable
     private void checkInButton(ActionEvent event)
     {
 //        if (idInputField.equals(setStudent()));
-////        int id = Integer.parseInt(input);
-////        if (id == 123456)
+//        int id = Integer.parseInt(input);
+//        if (id == 123456)
 //        {
 //            try {
 //                studentName.setText(studentModel.setStudent().toString());

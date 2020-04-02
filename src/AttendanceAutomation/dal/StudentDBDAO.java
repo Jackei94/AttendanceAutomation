@@ -36,7 +36,7 @@ public class StudentDBDAO implements IStudentDao
         List<Student> setStud = new ArrayList<>();
         try (Connection con = dbCon.getConnection())
         {
-            String sql = "Select StudentName From Student JOIN StudentCard ON Student.StudentID = StudentCard.CardID WHERE LoginNO=?;";
+            String sql = "Select StudentName From Student JOIN StudentCard ON Student.StudentID = StudentCard.CardID WHERE LoginNO=123456;";
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = ps.executeQuery(sql);
            Student student = new Student();
