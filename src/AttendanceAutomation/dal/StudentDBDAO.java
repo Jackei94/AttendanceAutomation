@@ -5,6 +5,7 @@
  */
 package AttendanceAutomation.dal;
 
+import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
 import dal.DalException;
 import java.sql.Connection;
@@ -31,31 +32,37 @@ public class StudentDBDAO implements IStudentDao
     }
 
     @Override
-    public List<Student> setStudent() throws DalException
+    public String setStudent(Card card, Student student) throws DalException
     {
-        List<Student> setStud = new ArrayList<>();
+        StringBuilder stud = new StringBuilder();
         try (Connection con = dbCon.getConnection())
         {
-            String sql = "Select StudentName From Student JOIN StudentCard ON Student.StudentID = StudentCard.CardID WHERE LoginNO=123456;";
-            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs = ps.executeQuery(sql);
-           Student student = new Student();
-            student.setName(rs.getString("StudentName"));
-          
-           
-            setStud.add(student);
-           
-            int affected = ps.executeUpdate();
-            if (affected < 1)
+            String sql = "SELECT StudentName FROM Student JOIN StudentCard ON Student.StudentID = StudentCard.CardID WHERE LoginNO=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            int studentNo = card.getLoginNO(); 
+            ps.setInt(1, studentNo);
+            
+            ResultSet rs = ps.executeQuery();
+            while (rs.next())
             {
-                throw new DalException("Can't get student");
+                stud.append(rs.getString("studentName"));
             }
+            return stud.toString();
+            
+//            while (rs.next())
+//            {
+//                Student stud = new Student();
+//                stud.setName(rs.getString("StudentName"));
+//                setStud.add(stud);
+//            }
+//            return setStud;
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(StudentDBDAO.class.getName()).log(Level.SEVERE, null, ex);
             throw new DalException("Can't do it.");
         }
-        return setStud;
     }
     
 }

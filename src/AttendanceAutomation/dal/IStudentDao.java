@@ -5,9 +5,9 @@
  */
 package AttendanceAutomation.dal;
 
+import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
 import dal.DalException;
-import java.util.List;
 
 /**
  *
@@ -15,5 +15,5 @@ import java.util.List;
  */
 public interface IStudentDao
 {
-    List<Student> setStudent() throws DalException;
+    public String setStudent(Card card, Student student) throws DalException;
 }

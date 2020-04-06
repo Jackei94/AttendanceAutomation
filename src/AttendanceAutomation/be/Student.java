@@ -14,13 +14,13 @@ import javafx.beans.property.StringProperty;
 public class Student
 {
     private int id;
-    private String name;
+    private String studentName;
     private double attendance;
 
-    public Student(int id, String name, double attendance)
+    public Student(int id, String studentName, double attendance)
     {
         this.id = id;
-        this.name = name;
+        this.studentName = studentName;
         this.attendance = attendance;
     }
     
@@ -34,14 +34,14 @@ public class Student
         return id;
     }
 
-    public String getName()
+    public String getStudentName()
     {
-        return name;
+        return studentName;
     }
 
-    public void setName(String name)
+    public void setStudentName(String studentName)
     {
-        this.name = name;
+        this.studentName = studentName;
     }
 
     public double getAttendance()

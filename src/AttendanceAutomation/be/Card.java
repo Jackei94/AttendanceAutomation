@@ -11,38 +11,38 @@ package AttendanceAutomation.be;
  */
 public class Card
 {
-   private int id;
-   private int login;
+   private int cardID;
+   private int loginNO;
 
    public Card(int id, int login)
    {
-      this.id = id;
-      this.login = login;
+      this.cardID = id;
+      this.loginNO = login;
    }
 
    public Card()
    {
-      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
    }
 
    public int getId()
    {
-      return id;
+      return cardID;
    }
 
    public void setId(int id)
    {
-      this.id = id;
+      this.cardID = id;
    }
 
-   public int getLogin()
+   public int getLoginNO()
    {
-      return login;
+      return loginNO;
    }
 
-   public void setLogin(int login)
+   public void setLoginNO(int login)
    {
-      this.login = login;
+      this.loginNO = login;
    }
    
    

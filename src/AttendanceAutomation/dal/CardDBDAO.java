@@ -38,7 +38,7 @@ public List<String> getCard() throws SQLException
    try ( Connection con = dbCon.getConnection())
    {
       PreparedStatement pstmt
-              = con.prepareStatement("SELECT LoginNO FROM StudentCard WHERE CardID =? INNER JOIN Student ON StudentName WHERE StudentID = CardID");
+              = con.prepareStatement("SELECT LoginNO FROM StudentCard WHERE CardID =?");
       
       
       
@@ -46,9 +46,8 @@ public List<String> getCard() throws SQLException
       
       while (rs.next())
       {
-        
+     
        getCard.add(rs.getString("CardID"));
-       
       }
       }catch (SQLException ex)
               {

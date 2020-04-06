@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/dal/LoginDBDAO.java</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/gui/controller/MainViewController.java</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/gui/controller/LoginViewController.java</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/dal/StudentDAO.java</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/dal/DalException.java</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/App.java</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/gui/controller/ListViewTeacherController.java</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/gui/controller/ListViewStudentController.java</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/dal/DatabaseConnector.java</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/gui/view/LoginView.fxml</file>
-            <file>file:/C:/Users/Mikkel%20H/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/be/Student.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
