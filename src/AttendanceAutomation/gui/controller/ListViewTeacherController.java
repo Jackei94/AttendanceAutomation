@@ -78,6 +78,7 @@ public class ListViewTeacherController implements Initializable
         try {
             studentList = studentDAO.getAllStudents();
             studentChoice.getItems().clear();
+            boolean first = true;
             for (Student stud : studentList)
             {
                 System.out.println("");
@@ -86,6 +87,12 @@ public class ListViewTeacherController implements Initializable
                 System.out.println("Student Attendance: "+stud.getAttendance());
                 
                 studentChoice.getItems().add(stud.getName());
+                if (first == true)
+                {
+                    studentChoice.setValue(stud.getName());
+                    
+                    first = false;
+                }
             }
             
        }
@@ -94,7 +101,7 @@ public class ListViewTeacherController implements Initializable
           
                 System.out.println("Failed");
        }
-        updateAttendancePieChart(99);
+        updateAttendancePieChart(0);
         
     }
 
