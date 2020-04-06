@@ -52,3 +52,24 @@ mssql-jdbc*.jar
 *.mkv
 
 # End of https://www.gitignore.io/api/java,netbeans
+/nbproject/private/
+/dist/
+/build/
+build/built-jar.properties
+build/built-jar.properties
+nbproject/private/private.properties
+nbproject/project.properties
+nbproject/private/private.xml
+*.properties
+*.properties
+*.xml
+*.jnlp
+build/built-jar.properties
+dist/AttendanceAutomation.html
+dist/AttendanceAutomation.jnlp
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+nbproject/private/private.properties
+nbproject/private/private.xml
+nbproject/project.properties
+nbproject/project.xml
