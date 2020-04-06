@@ -69,7 +69,7 @@ public class ListViewStudentController implements Initializable
             {
                 System.out.println("");
                 System.out.println("Student ID: "+stud.getId());
-                System.out.println("Student Name: "+stud.getName());
+                System.out.println("Student Name: "+stud.getStudentName());
                 System.out.println("Student Attendance: "+stud.getAttendance());
             }
             
