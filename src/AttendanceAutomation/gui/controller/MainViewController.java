@@ -5,6 +5,7 @@ package AttendanceAutomation.gui.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
 import AttendanceAutomation.gui.model.StudentModel;
 import AttendanceAutomation.gui.model.StudentOrTeacher;
@@ -86,23 +87,13 @@ public class MainViewController implements Initializable
     }
 
     @FXML
-    private void checkInButton(ActionEvent event)
+    private void checkInButton(ActionEvent event) throws Exception
     {
-//        if (idInputField.equals(setStudent()));
-////        int id = Integer.parseInt(input);
-////        if (id == 123456)
-//        {
-//            try {
-//                studentName.setText(studentModel.setStudent().toString());
-//                successOrFailed.setText("Success");
-//            } catch (Exception ex) {
-//                Logger.getLogger(MainViewController.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        } else
-//        {
-//            studentName.setText("");
-//            successOrFailed.setText("Failed");
-//        }
+        Card card = new Card();
+        Student student = new Student();
+        card.setLoginNO(Integer.parseInt(idInputField.getText()));
+        studentName.setText(studentModel.setStudent(card, student));
+        successOrFailed.setText("Success");
     }
 
     private Image handleImage()

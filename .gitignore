@@ -1,3 +1,8 @@
+
+# Created by https://www.gitignore.io/api/java,netbeans
+# Edit at https://www.gitignore.io/?templates=java,netbeans
+
+### Java ###
 # Compiled class file
 *.class
 
@@ -21,12 +26,29 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/nbproject/private/
-/dist/
-/build/
-build/built-jar.properties
-build/built-jar.properties
-nbproject/private/private.properties
-nbproject/project.properties
-nbproject/private/private.xml
-*.properties
+
+### NetBeans ###
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+**/nbproject/project.xml
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Java Database Connectivity (JDBC) jar file
+mssql-jdbc*.jar
+
+# Database configuration file
+*.db
+
+# Ignore media files
+*.mp3
+*.mp4
+*.mpeg4
+*.mpg
+*.mkv
+
+# End of https://www.gitignore.io/api/java,netbeans

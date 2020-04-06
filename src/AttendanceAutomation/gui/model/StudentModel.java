@@ -5,6 +5,7 @@
  */
 package AttendanceAutomation.gui.model;
 
+import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
 import AttendanceAutomation.bll.StudentManager;
 import java.util.List;
@@ -32,8 +33,8 @@ public class StudentModel
         return instance;
     }
     
-    public List<Student> setStudent() throws Exception
+    public String setStudent(Card card, Student student) throws Exception
     {
-       return studentManager.setStudent();
+       return studentManager.setStudent(card, student);
     }
 }

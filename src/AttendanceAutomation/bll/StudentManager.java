@@ -5,11 +5,11 @@
  */
 package AttendanceAutomation.bll;
 
+import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
 import AttendanceAutomation.dal.IStudentDao;
 import AttendanceAutomation.dal.StudentDBDAO;
 import dal.DalException;
-import java.util.List;
 
 /**
  *
@@ -24,9 +24,9 @@ public class StudentManager
         studentDao = (IStudentDao) new StudentDBDAO();
     }
     
-    public List<Student> setStudent() throws DalException
+    public String setStudent(Card card, Student student) throws DalException
     {
-        return studentDao.setStudent();
+        return studentDao.setStudent(card, student);
     }
 }
 
