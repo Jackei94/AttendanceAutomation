@@ -5,6 +5,9 @@
  */
 package AttendanceAutomation.be;
 
+import dal.DalException;
+import java.util.Date;
+import java.util.List;
 import javafx.beans.property.StringProperty;
 
 /**
@@ -15,9 +18,9 @@ public class Student
 {
     private int id;
     private String studentName;
-    private double attendance;
+    private Date attendance;
 
-    public Student(int id, String studentName, double attendance)
+    public Student(int id, String studentName, Date attendance)
     {
         this.id = id;
         this.studentName = studentName;
@@ -27,6 +30,16 @@ public class Student
     public Student()
     {
         
+    }
+
+    public Student(int id, int classId, double twoDecimals)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Student(int id, int classId)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getId()
@@ -44,14 +57,21 @@ public class Student
         this.studentName = studentName;
     }
 
-    public double getAttendance()
+    public Date getAttendance()
     {
         return attendance;
     }
 
-    public void setAttendance(double attendance)
+    public void setAttendance(Date attendance)
     {
         this.attendance = attendance;
     }
+
+    public void setId(int aInt)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 
 }

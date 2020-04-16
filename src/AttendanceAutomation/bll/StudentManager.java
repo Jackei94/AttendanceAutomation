@@ -10,6 +10,8 @@ import AttendanceAutomation.be.Student;
 import AttendanceAutomation.dal.IStudentDao;
 import AttendanceAutomation.dal.StudentDBDAO;
 import dal.DalException;
+import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -28,5 +30,13 @@ public class StudentManager
     {
         return studentDao.setStudent(card, student);
     }
+    
+    public List<Student> getAllStudents() throws DalException
+    {
+        return studentDao.getAllStudents();
+    }
+    
+        
 }
+
 
