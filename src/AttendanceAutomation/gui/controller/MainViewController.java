@@ -5,12 +5,15 @@ package AttendanceAutomation.gui.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import AttendanceAutomation.be.Attendance;
 import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
+import AttendanceAutomation.gui.model.AttendanceModel;
 import AttendanceAutomation.gui.model.StudentModel;
 import AttendanceAutomation.gui.model.StudentOrTeacher;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +37,7 @@ public class MainViewController implements Initializable
 {
     
     private StudentModel studentModel;
+    private AttendanceModel attendanceModel;
     private StudentOrTeacher studentOrTeacher;
 
     @FXML
@@ -51,6 +55,7 @@ public class MainViewController implements Initializable
         try
         {
             studentModel = StudentModel.getInstance();
+            attendanceModel = AttendanceModel.getInstance();
             studentOrTeacher = StudentOrTeacher.getInstance();
         } catch (Exception ex)
         {
@@ -89,11 +94,38 @@ public class MainViewController implements Initializable
     @FXML
     private void checkInButton(ActionEvent event) throws Exception
     {
+        handleStudentCard();
+        handleAttendance();
+    }
+    
+    private void handleAttendance() throws Exception
+    {
+        Card card = new Card();
+        Card cardId = new Card();
+        Attendance attendance = new Attendance();
+        
+        card.setLoginNO(Integer.parseInt(idInputField.getText()));
+        cardId.setId(attendanceModel.setStudentId(card));
+        attendance.setAttendance(LocalDate.now());
+        
+        attendanceModel.setAttendance(attendance, cardId);
+    }
+    
+    private void handleStudentCard() throws Exception
+    {
         Card card = new Card();
         Student student = new Student();
         card.setLoginNO(Integer.parseInt(idInputField.getText()));
         studentName.setText(studentModel.setStudent(card, student));
-        successOrFailed.setText("Success");
+        
+        if(studentModel.setStudent(card, student).equalsIgnoreCase(""))
+        {
+            successOrFailed.setText("Failed");
+        }
+        else
+        {
+            successOrFailed.setText("Success");
+        }
     }
 
     private Image handleImage()

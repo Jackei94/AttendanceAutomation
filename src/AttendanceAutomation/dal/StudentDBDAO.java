@@ -5,15 +5,13 @@
  */
 package AttendanceAutomation.dal;
 
+import AttendanceAutomation.dal.Interface.IStudentDao;
 import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
 import dal.DalException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.ResultSet;
@@ -49,14 +47,6 @@ public class StudentDBDAO implements IStudentDao
                 stud.append(rs.getString("studentName"));
             }
             return stud.toString();
-            
-//            while (rs.next())
-//            {
-//                Student stud = new Student();
-//                stud.setName(rs.getString("StudentName"));
-//                setStud.add(stud);
-//            }
-//            return setStud;
             
         } catch (SQLException ex)
         {

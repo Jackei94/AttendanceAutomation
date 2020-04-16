@@ -7,7 +7,7 @@ package AttendanceAutomation.bll;
 
 import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
-import AttendanceAutomation.dal.IStudentDao;
+import AttendanceAutomation.dal.Interface.IStudentDao;
 import AttendanceAutomation.dal.StudentDBDAO;
 import dal.DalException;
 

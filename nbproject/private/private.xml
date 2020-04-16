@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Jacob/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/be/Card.java</file>
+            <file>file:/C:/Users/Jacob/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/dal/StudentDBDAO.java</file>
+            <file>file:/C:/Users/Jacob/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/gui/model/AttendanceModel.java</file>
+            <file>file:/C:/Users/Jacob/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/bll/AttendanceManager.java</file>
+            <file>file:/C:/Users/Jacob/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/dal/AttendanceDBDAO.java</file>
+            <file>file:/C:/Users/Jacob/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/dal/Interface/IAttendanceDao.java</file>
+            <file>file:/C:/Users/Jacob/Documents/GitHub/AttendanceAutomation/src/AttendanceAutomation/gui/controller/MainViewController.java</file>
+        </group>
     </open-files>
 </project-private>
