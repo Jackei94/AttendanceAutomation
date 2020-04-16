@@ -7,10 +7,13 @@ package AttendanceAutomation.gui.controller;
 
 
 import AttendanceAutomation.be.Student;
-import AttendanceAutomation.dal.StudentDAO;
+import AttendanceAutomation.dal.StudentDBDAO;
+import AttendanceAutomation.gui.model.StudentModel;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,13 +21,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 
 /**
@@ -34,7 +40,12 @@ import javafx.scene.layout.GridPane;
  */
 public class ListViewTeacherController implements Initializable
 {
-   
+
+    private static void setItems(List<Student> allStudents)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   private StudentModel studentModel;
 
    @FXML
    private TableView<Student> studentView;
@@ -50,19 +61,18 @@ public class ListViewTeacherController implements Initializable
     private ChoiceBox<?> subjectChoice;
     @FXML
     private BorderPane dataChart;
-    @FXML
     private TextField StudentID;
     
     private double attendance = 50;
     private double abscence = 50;
     
-    StudentDAO studentDAO = new StudentDAO();
+    
     List<Student> studentList;
     
     PieChart attendancePieChart;
     BarChart attendanceBarChart;
     @FXML
-    private ChoiceBox<String> graphChoice;
+    private Button ButtonLogOut;
     
 
 
@@ -73,11 +83,21 @@ public class ListViewTeacherController implements Initializable
    
     public void initialize(URL url, ResourceBundle rb)
     {
-        StudentDAO studentDAO = new StudentDAO();
+        
+       StudentDBDAO StudentDBDAO = null;
+       try
+       {
+           studentModel = new StudentModel();
+           StudentDBDAO = new StudentDBDAO();
+       } catch (Exception ex)
+       {
+           Logger.getLogger(ListViewTeacherController.class.getName()).log(Level.SEVERE, null, ex);
+       }
         Student test = null;
         try {
-            studentList = studentDAO.getAllStudents();
+            studentList = StudentDBDAO.getAllStudents();
             studentChoice.getItems().clear();
+            boolean first = true;
             for (Student stud : studentList)
             {
                 System.out.println("");
@@ -86,7 +106,17 @@ public class ListViewTeacherController implements Initializable
                 System.out.println("Student Attendance: "+stud.getAttendance());
                 
                 studentChoice.getItems().add(stud.getStudentName());
+                if (first == true)
+                {
+                    studentChoice.setValue(stud.getName());
+                    
+                    first = false;
+                }
             }
+        studentView.setItems(studentModel.getAllStudents());
+        // Sets all cells to their values for student table
+        studentAtt.setCellValueFactory(new PropertyValueFactory("Attendance"));
+        studentName.setCellValueFactory(new PropertyValueFactory("studentName"));
             
        }
        catch (Exception e)
@@ -94,47 +124,36 @@ public class ListViewTeacherController implements Initializable
           
                 System.out.println("Failed");
        }
-        updateAttendancePieChart(99);
         
     }
 
-    @FXML
+
     private void StudentIdSelect(ActionEvent event)
     {
         int id = StudentID.getText().length() - 1;
         System.out.println(id);
-        updateAttendancePieChart(id);
+//        updateAttendancePieChart(id);
     }
     
-    private void updateAttendancePieChart(int id)
-    {
-        Student student = studentList.get(id);
-        attendance = student.getAttendance();
-        abscence = 100 - attendance;
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Attendance: " + attendance, attendance),
-                new PieChart.Data("Abscence: " + abscence, abscence)
-        );
-        attendancePieChart = new PieChart(pieChartData);
-        attendancePieChart.setTitle("Attendance");
-        dataChart.setCenter(attendancePieChart);
-    }
-    
-    /*
-    private void updateAttendanceBarChart(int id)
-    {
-        Student student = studentList.get(id);
-        attendance = student.getAttendance();
-        abscence = 100 - attendance;
-        ObservableList<BarChart.Data> barChartData = FXCollections.observableArrayList(
-                new BarChart.Data("Attendance: " + attendance, attendance),
-                new BarChart.Data("Abscence: " + abscence, abscence)
-        );
-        attendanceBarChart = new BarChart(barChartData);
-        attendanceBarChart.setTitle("Attendance");
-        dataChart.setCenter(attendanceBarChart);
-    }
-    */
+//    private void updateAttendancePieChart(int id)
+//    {
+//        Student student = studentList.get(id);
+//        attendance = student.getAttendance();
+//        abscence = 100 - attendance;
+//        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+//                new PieChart.Data("Attendance: " + attendance, attendance),
+//                new PieChart.Data("Abscence: " + abscence, abscence)
+//        );
+//        attendancePieChart = new PieChart(pieChartData);
+//        attendancePieChart.setTitle("Attendance");
+//        dataChart.setCenter(attendancePieChart);
+//    }
+//    
+   private void LogOutButton(ActionEvent event)
+   {
+       Stage stage = (Stage) ButtonLogOut.getScene().getWindow();
+        stage.close();
+   }
 }
   
     

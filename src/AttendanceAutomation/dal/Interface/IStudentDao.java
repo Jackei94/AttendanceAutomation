@@ -8,6 +8,8 @@ package AttendanceAutomation.dal.Interface;
 import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
 import dal.DalException;
+import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -16,4 +18,6 @@ import dal.DalException;
 public interface IStudentDao
 {
     public String setStudent(Card card, Student student) throws DalException;
+    
+    public List<Student> getAllStudents() throws DalException;
 }
