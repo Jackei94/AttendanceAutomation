@@ -97,6 +97,7 @@ public class ListViewTeacherController implements Initializable
         try {
             studentList = StudentDBDAO.getAllStudents();
             studentChoice.getItems().clear();
+            boolean first = true;
             for (Student stud : studentList)
             {
                 System.out.println("");
@@ -105,6 +106,12 @@ public class ListViewTeacherController implements Initializable
                 System.out.println("Student Attendance: "+stud.getAttendance());
                 
                 studentChoice.getItems().add(stud.getStudentName());
+                if (first == true)
+                {
+                    studentChoice.setValue(stud.getName());
+                    
+                    first = false;
+                }
             }
         studentView.setItems(studentModel.getAllStudents());
         // Sets all cells to their values for student table
@@ -117,7 +124,6 @@ public class ListViewTeacherController implements Initializable
           
                 System.out.println("Failed");
        }
-//        updateAttendancePieChart(99);
         
     }
 
