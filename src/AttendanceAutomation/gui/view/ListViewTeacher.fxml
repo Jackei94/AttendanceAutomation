@@ -24,7 +24,7 @@
       </TableView>
       <BorderPane fx:id="dataChart" layoutX="14.0" layoutY="213.0" prefHeight="375.0" prefWidth="335.0" />
       <Button layoutX="382.0" layoutY="560.0" mnemonicParsing="false" text="Attendance" />
-      <Button fx:id="ButtonLogOut" layoutX="731.0" layoutY="560.0" mnemonicParsing="false" text="Logout" />
+      <Button fx:id="logoutButton" layoutX="731.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleLogoutButton" text="Logout" />
       <TextField layoutX="182.0" layoutY="44.0" prefHeight="26.0" prefWidth="77.0" promptText="Class" />
       <TextField layoutX="182.0" layoutY="92.0" prefHeight="26.0" prefWidth="77.0" promptText="Student" />
       <TextField layoutX="182.0" layoutY="144.0" prefHeight="26.0" prefWidth="77.0" promptText="Subject" />

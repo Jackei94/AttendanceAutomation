@@ -10,6 +10,7 @@ import AttendanceAutomation.be.Student;
 import AttendanceAutomation.bll.StudentManager;
 import dal.DalException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -48,12 +49,5 @@ public class StudentModel
     {
         return allStudents;
     }
-    
-    public ArrayList<Date> search(List<Date> date, String searchQuery)
-    {
-        return studentManager.search(date, searchQuery);
-    }
-
-    
     
 }

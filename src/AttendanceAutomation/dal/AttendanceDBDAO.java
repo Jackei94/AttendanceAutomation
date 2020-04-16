@@ -7,7 +7,6 @@ package AttendanceAutomation.dal;
 
 import AttendanceAutomation.be.Attendance;
 import AttendanceAutomation.be.Card;
-import AttendanceAutomation.be.Student;
 import AttendanceAutomation.dal.Interface.IAttendanceDao;
 import dal.DalException;
 import java.sql.Connection;
@@ -40,7 +39,7 @@ public class AttendanceDBDAO implements IAttendanceDao
     {
         try ( Connection con = dbCon.getConnection())
         {
-            String sql = "INSERT INTO Attendance(studentID, attendanceDate) VALUES (?,?);";
+            String sql = "INSERT INTO Attendance(studentID, attendance) VALUES (?,?);";
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             
             ps.setInt(1, card.getId());

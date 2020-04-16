@@ -66,16 +66,6 @@ public class LoginViewController implements Initializable
         studentOrTeacherLogin.textProperty().bind(studentOrTeacher.studentOrTeacherProperty());
     }
 
-//    @FXML
-//    private void loginButton(ActionEvent event) throws IOException
-//    {
-//        Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/ListView.fxml"));
-//        Scene scene = new Scene(loader);
-//        Stage stage = new Stage();
-//        stage.setScene(scene);
-//        stage.show();
-//    }
-
     @FXML
     private void LoginButtonClicked(MouseEvent event) throws IOException
     {
@@ -91,7 +81,7 @@ public class LoginViewController implements Initializable
         else if(usernameField.getText().equals("Student") && passwordField.getText().equals("Student"))
         {
             JOptionPane.showMessageDialog(null,"Login Succesful");
-            Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/ListViewStudent.fxml"));
+            Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/ListViewTeacher.fxml"));
             Scene scene = new Scene(loader);
             Stage stage = new Stage();
             stage.setScene(scene);

@@ -11,7 +11,6 @@ import AttendanceAutomation.dal.Interface.IStudentDao;
 import AttendanceAutomation.dal.StudentDBDAO;
 import dal.DalException;
 import java.util.List;
-import javafx.collections.ObservableList;
 
 /**
  *
