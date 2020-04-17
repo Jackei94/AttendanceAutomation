@@ -20,18 +20,31 @@ import java.util.List;
 
 /**
  *
- * @author Tramm
+ * @author Christian, Jacob, Jonas & Mikkel
  */
 public class StudentDBDAO implements IStudentDao
 {
 
     private final DatabaseConnector dbCon;
 
+    /**
+     * Constructor for StudentDBDAO
+     *
+     * @throws Exception
+     */
     public StudentDBDAO() throws Exception
     {
         dbCon = new DatabaseConnector();
     }
 
+    /**
+     * Sets the shown student
+     *
+     * @param card
+     * @param student
+     * @return
+     * @throws DalException
+     */
     @Override
     public String setStudent(Card card, Student student) throws DalException
     {
@@ -58,6 +71,12 @@ public class StudentDBDAO implements IStudentDao
         }
     }
 
+    /**
+     * Gets all students to a list
+     *
+     * @return
+     * @throws DalException
+     */
     public List<Student> getAllStudents() throws DalException
     {
         ArrayList<Student> allStudents = new ArrayList<>();
@@ -89,4 +108,5 @@ public class StudentDBDAO implements IStudentDao
             throw new DalException("Can´t make list");
         }
     }
+    
 }

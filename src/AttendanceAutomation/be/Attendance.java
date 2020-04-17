@@ -9,42 +9,52 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Jacob
+ * @author Christian, Jacob, Jonas & Mikkel
  */
 public class Attendance
 {
+
     private int studentId;
     private LocalDate attendance;
 
-    public Attendance(int studentId, LocalDate attendance)
-    {
-        this.studentId = studentId;
-        this.attendance = attendance;
-    }
-    
-    public Attendance()
-    {
-        
-    }
-
+    /**
+     * Getter for studentId
+     *
+     * @return
+     */
     public int getStudentId()
     {
         return studentId;
     }
 
+    /**
+     * Setter for studentId
+     *
+     * @param studentId
+     */
     public void setStudentId(int studentId)
     {
         this.studentId = studentId;
     }
 
+    /**
+     * Getter for attendance
+     *
+     * @return
+     */
     public LocalDate getAttendance()
     {
         return attendance;
     }
 
+    /**
+     * Setter for attendance
+     *
+     * @param attendance
+     */
     public void setAttendance(LocalDate attendance)
     {
         this.attendance = attendance;
     }
-    
+
 }

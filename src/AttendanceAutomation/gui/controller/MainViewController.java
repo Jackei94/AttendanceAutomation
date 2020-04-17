@@ -31,11 +31,11 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author Jacob
+ * @author Christian, Jacob, Jonas & Mikkel
  */
 public class MainViewController implements Initializable
 {
-    
+
     private StudentModel studentModel;
     private AttendanceModel attendanceModel;
     private StudentOrTeacher studentOrTeacher;
@@ -49,6 +49,12 @@ public class MainViewController implements Initializable
     @FXML
     private TextField idInputField;
 
+    /**
+     * Initialize the controller
+     *
+     * @param url
+     * @param rb
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -64,6 +70,12 @@ public class MainViewController implements Initializable
         logoImage.setImage(handleImage());
     }
 
+    /**
+     * Eventhandler for student login
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void studentLoginButton(ActionEvent event) throws IOException
     {
@@ -73,6 +85,12 @@ public class MainViewController implements Initializable
         handleLoginScene();
     }
 
+    /**
+     * Eventhandler for teacher login
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void teacherLoginButton(ActionEvent event) throws IOException
     {
@@ -82,6 +100,11 @@ public class MainViewController implements Initializable
         handleLoginScene();
     }
 
+    /**
+     * Handles the login scene
+     *
+     * @throws IOException
+     */
     public void handleLoginScene() throws IOException
     {
         Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/LoginView.fxml"));
@@ -91,43 +114,63 @@ public class MainViewController implements Initializable
         stage.show();
     }
 
+    /**
+     * Eventhandler for the check-in button
+     *
+     * @param event
+     * @throws Exception
+     */
     @FXML
     private void checkInButton(ActionEvent event) throws Exception
     {
         handleStudentCard();
         handleAttendance();
     }
-    
+
+    /**
+     * Handles the attendance
+     *
+     * @throws Exception
+     */
     private void handleAttendance() throws Exception
     {
         Card card = new Card();
         Card cardId = new Card();
         Attendance attendance = new Attendance();
-        
+
         card.setLoginNO(Integer.parseInt(idInputField.getText()));
         cardId.setId(attendanceModel.setStudentId(card));
         attendance.setAttendance(LocalDate.now());
-        
+
         attendanceModel.setAttendance(attendance, cardId);
     }
-    
+
+    /**
+     * Handles shown attendee
+     *
+     * @throws Exception
+     */
     private void handleStudentCard() throws Exception
     {
         Card card = new Card();
         Student student = new Student();
         card.setLoginNO(Integer.parseInt(idInputField.getText()));
         studentName.setText(studentModel.setStudent(card, student));
-        
-        if(studentModel.setStudent(card, student).equalsIgnoreCase(""))
+
+        if (studentModel.setStudent(card, student).equalsIgnoreCase(""))
         {
             successOrFailed.setText("Failed");
-        }
-        else
+        } else
         {
             successOrFailed.setText("Success");
         }
     }
 
+    /**
+     * Handles the shown logo
+     *
+     * @return
+     */
     private Image handleImage()
     {
         Image logo = new Image("/AttendanceAutomation/images/easvlogo.jpg");

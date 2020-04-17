@@ -7,43 +7,52 @@ package AttendanceAutomation.be;
 
 /**
  *
- * @author Tramm
+ * @author Christian, Jacob, Jonas & Mikkel
  */
 public class Card
 {
-   private int cardID;
-   private int loginNO;
 
-   public Card(int id, int login)
-   {
-      this.cardID = id;
-      this.loginNO = login;
-   }
+    private int cardID;
+    private int loginNO;
 
-   public Card()
-   {
+    /**
+     * Getter for id
+     *
+     * @return
+     */
+    public int getId()
+    {
+        return cardID;
+    }
 
-   }
+    /**
+     * Setter for id
+     *
+     * @param id
+     */
+    public void setId(int id)
+    {
+        this.cardID = id;
+    }
 
-   public int getId()
-   {
-      return cardID;
-   }
+    /**
+     * Getter for loginNO
+     *
+     * @return
+     */
+    public int getLoginNO()
+    {
+        return loginNO;
+    }
 
-   public void setId(int id)
-   {
-      this.cardID = id;
-   }
+    /**
+     * Setter for loginNO
+     *
+     * @param login
+     */
+    public void setLoginNO(int login)
+    {
+        this.loginNO = login;
+    }
 
-   public int getLoginNO()
-   {
-      return loginNO;
-   }
-
-   public void setLoginNO(int login)
-   {
-      this.loginNO = login;
-   }
-   
-   
 }

@@ -11,18 +11,29 @@ import javafx.beans.property.StringProperty;
 
 /**
  *
- * @author Jacob
+ * @author Christian, Jacob, Jonas & Mikkel
  */
 public class StudentOrTeacher
 {
+
     private static StudentOrTeacher instance;
     private final SimpleStringProperty studentOrTeacher;
 
+    /**
+     * Constructor for StudentOrTeacher
+     */
     public StudentOrTeacher()
     {
         this.studentOrTeacher = new SimpleStringProperty();
     }
-    
+
+    /**
+     * Gets the instance for StudentOrTeacher
+     *
+     * @return
+     * @throws IOException
+     * @throws Exception
+     */
     public static StudentOrTeacher getInstance() throws IOException, Exception
     {
         if (instance == null)
@@ -31,24 +42,29 @@ public class StudentOrTeacher
         }
         return instance;
     }
-    
+
+    /**
+     * Returns StringProperty of StudentOrTeacher
+     *
+     * @return
+     */
     public StringProperty studentOrTeacherProperty()
     {
         return studentOrTeacher;
     }
 
     /**
-     * Sets the newOrEdit stringproperty.
+     * Sets the StringProperty of studentOrTeacherProperty
      *
      * @param newOrEdit
      */
-    public void setStudentOrTeacher(String newOrEdit)
+    public void setStudentOrTeacher(String studentOrTeacher)
     {
-        studentOrTeacherProperty().set(newOrEdit);
+        studentOrTeacherProperty().set(studentOrTeacher);
     }
 
     /**
-     * Returns newOrEditProperty with the get() method.
+     * Returns the studentOrTeacherProperty with the get() method
      *
      * @return
      */

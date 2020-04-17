@@ -27,11 +27,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
-
 /**
  * FXML Controller class
  *
- * @author Jacob
+ * @author Christian, Jacob, Jonas & Mikkel
  */
 public class LoginViewController implements Initializable
 {
@@ -49,6 +48,12 @@ public class LoginViewController implements Initializable
     @FXML
     private PasswordField passwordField;
 
+    /**
+     * Initialize the controller
+     *
+     * @param url
+     * @param rb
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -66,39 +71,53 @@ public class LoginViewController implements Initializable
         studentOrTeacherLogin.textProperty().bind(studentOrTeacher.studentOrTeacherProperty());
     }
 
+    /**
+     * Eventhandler for logging in either as teacher or student
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
-    private void LoginButtonClicked(MouseEvent event) throws IOException
+    private void loginButtonClicked(MouseEvent event) throws IOException
     {
-        if(usernameField.getText().equals("Admin") && passwordField.getText().equals("Admin"))
+        if (usernameField.getText().equals("Admin") && passwordField.getText().equals("Admin"))
         {
-            JOptionPane.showMessageDialog(null,"Login Succesful");
+            JOptionPane.showMessageDialog(null, "Login Succesful");
             Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/ListViewTeacher.fxml"));
             Scene scene = new Scene(loader);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
-        }
-        else if(usernameField.getText().equals("Student") && passwordField.getText().equals("Student"))
+        } else if (usernameField.getText().equals("Student") && passwordField.getText().equals("Student"))
         {
-            JOptionPane.showMessageDialog(null,"Login Succesful");
+            JOptionPane.showMessageDialog(null, "Login Succesful");
             Parent loader = FXMLLoader.load(getClass().getResource("/AttendanceAutomation/gui/view/ListViewTeacher.fxml"));
             Scene scene = new Scene(loader);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
-        }
-        else
+        } else
         {
-            JOptionPane.showMessageDialog(null,"Login Failure");
+            JOptionPane.showMessageDialog(null, "Login Failure");
         }
     }
 
+    /**
+     * Handles the shown logo
+     *
+     * @return
+     */
     private Image handleImage()
     {
         Image logo = new Image("/AttendanceAutomation/images/easvlogo.jpg");
         return logo;
     }
 
+    /**
+     * Eventhandler for closing the window
+     *
+     * @param event
+     */
     @FXML
     private void cancelButton(ActionEvent event)
     {

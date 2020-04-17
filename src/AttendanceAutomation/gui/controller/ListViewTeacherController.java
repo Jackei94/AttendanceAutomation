@@ -6,7 +6,6 @@
 package AttendanceAutomation.gui.controller;
 
 import AttendanceAutomation.be.Student;
-import AttendanceAutomation.dal.StudentDBDAO;
 import AttendanceAutomation.gui.model.StudentModel;
 import java.net.URL;
 import java.util.List;
@@ -22,7 +21,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -30,10 +28,11 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Jacob
+ * @author Christian, Jacob, Jonas & Mikkel
  */
 public class ListViewTeacherController implements Initializable
 {
+
     private StudentModel studentModel;
 
     @FXML
@@ -59,10 +58,12 @@ public class ListViewTeacherController implements Initializable
     private Button logoutButton;
 
     /**
-     * Initializes the controller class.
+     * Initialize the controller
+     *
+     * @param url
+     * @param rb
      */
     @Override
-
     public void initialize(URL url, ResourceBundle rb)
     {
         try
@@ -97,6 +98,11 @@ public class ListViewTeacherController implements Initializable
 
     }
 
+    /**
+     * Eventhandler for the logging out
+     *
+     * @param event
+     */
     @FXML
     private void handleLogoutButton(ActionEvent event)
     {

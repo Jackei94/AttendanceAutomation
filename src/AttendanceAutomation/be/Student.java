@@ -5,73 +5,67 @@
  */
 package AttendanceAutomation.be;
 
-import dal.DalException;
 import java.util.Date;
-import java.util.List;
-import javafx.beans.property.StringProperty;
 
 /**
  *
- * @author Jacob
+ * @author Christian, Jacob, Jonas & Mikkel
  */
 public class Student
 {
+
     private int id;
     private String studentName;
     private Date attendance;
 
-    public Student(int id, String studentName, Date attendance)
-    {
-        this.id = id;
-        this.studentName = studentName;
-        this.attendance = attendance;
-    }
-    
-    public Student()
-    {
-        
-    }
-
-    public Student(int id, int classId, double twoDecimals)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Student(int id, int classId)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    /**
+     * Getter for id
+     *
+     * @return
+     */
     public int getId()
     {
         return id;
     }
 
+    /**
+     * Getter for studentName
+     *
+     * @return
+     */
     public String getStudentName()
     {
         return studentName;
     }
 
+    /**
+     * Setter for studentName
+     *
+     * @param studentName
+     */
     public void setStudentName(String studentName)
     {
         this.studentName = studentName;
     }
 
+    /**
+     * Getter for attendance
+     *
+     * @return
+     */
     public Date getAttendance()
     {
         return attendance;
     }
 
+    /**
+     * Setter for attendance
+     *
+     * @param attendance
+     */
     public void setAttendance(Date attendance)
     {
         this.attendance = attendance;
     }
-
-    public void setId(int aInt)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
 
 }

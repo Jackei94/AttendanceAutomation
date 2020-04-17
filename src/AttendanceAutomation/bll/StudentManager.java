@@ -14,28 +14,45 @@ import java.util.List;
 
 /**
  *
- * @author Jacob
+ * @author Christian, Jacob, Jonas & Mikkel
  */
 public class StudentManager
 {
+
     private IStudentDao studentDao;
-    
+
+    /**
+     * Constructor for StudentManager
+     *
+     * @throws Exception
+     */
     public StudentManager() throws Exception
     {
         studentDao = (IStudentDao) new StudentDBDAO();
     }
-    
+
+    /**
+     * Sets the shown student
+     *
+     * @param card
+     * @param student
+     * @return
+     * @throws DalException
+     */
     public String setStudent(Card card, Student student) throws DalException
     {
         return studentDao.setStudent(card, student);
     }
-    
+
+    /**
+     * Gets all students to a list
+     *
+     * @return
+     * @throws DalException
+     */
     public List<Student> getAllStudents() throws DalException
     {
         return studentDao.getAllStudents();
     }
-    
-        
+
 }
-
-
