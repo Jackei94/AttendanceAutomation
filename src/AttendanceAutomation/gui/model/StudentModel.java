@@ -17,7 +17,7 @@ import javafx.collections.ObservableList;
 
 /**
  *
- * @author Jacob
+ * @author Java Doctors
  */
 public class StudentModel
 {

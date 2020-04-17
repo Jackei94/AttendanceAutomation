@@ -11,7 +11,7 @@ import AttendanceAutomation.bll.AttendanceManager;
 
 /**
  *
- * @author Jacob
+ * @author Java Doctors
  */
 public class AttendanceModel
 {

@@ -7,7 +7,7 @@ package AttendanceAutomation.be;
 
 /**
  *
- * @author Tramm
+ * @author Java Doctors
  */
 public class Card
 {

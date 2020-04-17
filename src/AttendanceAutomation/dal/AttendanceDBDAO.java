@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Jacob
+ * @author Java Doctors
  */
 public class AttendanceDBDAO implements IAttendanceDao
 {
