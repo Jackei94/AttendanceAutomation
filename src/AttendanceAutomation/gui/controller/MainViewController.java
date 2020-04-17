@@ -31,6 +31,7 @@ import javafx.stage.Stage;
 
 /**
  *
+
  * @author Christian, Jacob, Jonas & Mikkel
  */
 public class MainViewController implements Initializable

@@ -84,7 +84,8 @@ public class StudentDBDAO implements IStudentDao
         try ( Connection con = dbCon.getConnection())
         {
             // SQL code. 
-            String sql = "SELECT * FROM Student INNER JOIN Attendance ON Student.studentID = Attendance.studentId;";
+            String sql = "SELECT * FROM Student INNER JOIN Attendance ON "
+                    + "Student.studentID = Attendance.studentId;";
             // Create statement.
             java.sql.Statement statement = con.createStatement();
             // Attempts to execute the statement.

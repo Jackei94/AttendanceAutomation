@@ -9,11 +9,10 @@ import AttendanceAutomation.be.Card;
 import AttendanceAutomation.be.Student;
 import dal.DalException;
 import java.util.List;
-import javafx.collections.ObservableList;
 
 /**
  *
- * @author Jacob
+ * @author Java Doctors
  */
 public interface IStudentDao
 {

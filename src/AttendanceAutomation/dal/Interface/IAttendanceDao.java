@@ -11,7 +11,7 @@ import dal.DalException;
 
 /**
  *
- * @author Jacob
+ * @author Java Doctors
  */
 public interface IAttendanceDao
 {
