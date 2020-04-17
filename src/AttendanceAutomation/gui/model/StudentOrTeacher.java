@@ -11,7 +11,7 @@ import javafx.beans.property.StringProperty;
 
 /**
  *
- * @author Jacob
+ * @author Java Doctors
  */
 public class StudentOrTeacher
 {
